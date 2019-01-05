@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="openjpa-2.4.1">
+    <CLASSES>
+      <root url="jar://Z:/apache-tomee-webprofile-7.0.2/lib/openjpa-2.4.1.jar!/" />
+      <root url="jar://F:/Logiciels/Tomee/apache-tomee-webprofile-7.0.2/lib/openjpa-2.4.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,27 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="/index">App Bibliothèque</a>
+    <%  if (request.getRemoteUser() == null) { %>
+            <a class="nav-link active" href="/bookList">Livres</a>
+    <%      if (!"/WEB-INF/connexion.jsp".equals(request.getServletPath())) { %>
+            <a class="btn btn-primary" href="/secure/login">Connexion</a>
+    <%      }
+        } else {%>
+            <a class="nav-link active align-middle" href="/secure/bookList">Livres</a>
+            <a class="btn btn-primary" href="/secure/logout">Déconnexion</a>
+    <%  }%>
+</nav>
+<!--
+<div class="navbar navbar-light bg-light">
+    <div class="row container">
+        <div class="col text-left">
+            <a class="navbar-brand" href="/index">App Bibliothèque</a>
+        </div>
+        <div class="col text-center">
+            <a class="nav-link active" href="/bookList">Livres</a>
+        </div>
+        <div class="col text-right">
+            <a class="btn btn-primary" href="/secure/login">Connexion</a>
+        </div>
+    </div>
+</div>-->
