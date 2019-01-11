@@ -5,7 +5,7 @@
          version="4.0">
     <servlet>
         <servlet-name>index</servlet-name>
-        <servlet-class>ch.hesge.library.servlets.Index</servlet-class>
+        <servlet-class>ch.hesge.library.Index</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>index</servlet-name>
@@ -13,23 +13,15 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>bookList</servlet-name>
-        <servlet-class>ch.hesge.library.servlets.BookList</servlet-class>
+        <servlet-class>ch.hesge.library.book.BookList</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>bookList</servlet-name>
         <url-pattern>/bookList</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>secureBookList</servlet-name>
-        <servlet-class>ch.hesge.library.servlets.SecureBookList</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>secureBookList</servlet-name>
-        <url-pattern>/secure/bookList</url-pattern>
-    </servlet-mapping>
-    <servlet>
         <servlet-name>newBook</servlet-name>
-        <servlet-class>ch.hesge.library.servlets.NewBook</servlet-class>
+        <servlet-class>ch.hesge.library.book.NewBook</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>newBook</servlet-name>
@@ -37,7 +29,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>modifyBook</servlet-name>
-        <servlet-class>ch.hesge.library.servlets.ModifyBook</servlet-class>
+        <servlet-class>ch.hesge.library.book.ModifyBook</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>modifyBook</servlet-name>
@@ -45,7 +37,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>indexSecure</servlet-name>
-        <servlet-class>ch.hesge.library.servlets.Login</servlet-class>
+        <servlet-class>ch.hesge.library.login.Login</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>indexSecure</servlet-name>
@@ -53,7 +45,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>deconnexion</servlet-name>
-        <servlet-class>ch.hesge.library.servlets.Logout</servlet-class>
+        <servlet-class>ch.hesge.library.login.Logout</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>deconnexion</servlet-name>
@@ -61,13 +53,12 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>deleteBook</servlet-name>
-        <servlet-class>ch.hesge.library.servlets.DeleteBook</servlet-class>
+        <servlet-class>ch.hesge.library.book.DeleteBook</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>deleteBook</servlet-name>
         <url-pattern>/secure/delete</url-pattern>
     </servlet-mapping>
-
 
     <login-config>
         <auth-method>FORM</auth-method>
