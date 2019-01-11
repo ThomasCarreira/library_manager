@@ -19,7 +19,7 @@
         <%@ include file="navbar.jspf" %>
     </div>
     <div class="panel-body">
-        <form action="/secure/new" method="post">
+        <form action="${pageContext.request.contextPath}/secure/new" method="post">
             <% if (request.getAttribute("error") != null) { %>
             <div class="alert alert-danger" role="alert">
                 <%=request.getAttribute("error")%>

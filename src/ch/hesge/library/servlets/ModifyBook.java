@@ -24,7 +24,7 @@ public class ModifyBook extends HttpServlet {
         if (titre != "" && auteur != "" && editeur != "" && annee != ""){
             Book book = new Book(titre, auteur, editeur, annee);
             bookService.modifyBook(id, book);
-            resp.sendRedirect("/secure/bookList");
+            resp.sendRedirect(req.getContextPath()+"/secure/bookList");
         } else {
             req.setAttribute("error","Champ vide inacceptable !!!");
             req.getRequestDispatcher("/WEB-INF/secureBookList.jsp").forward(req,resp);

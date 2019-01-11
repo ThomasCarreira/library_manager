@@ -12,6 +12,6 @@ public class Login extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //req.getRequestDispatcher("/WEB-INF/index.jsp").forward(req,resp);
         System.out.println();
-        resp.sendRedirect("/index");
+        resp.sendRedirect(req.getContextPath()+"/index");
     }
 }

@@ -16,6 +16,6 @@ public class DeleteBook extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         bookService.deleteBook(Integer.parseInt(req.getParameter("id")));
-        resp.sendRedirect("/secure/bookList");
+        resp.sendRedirect(req.getContextPath()+"/secure/bookList");
     }
 }

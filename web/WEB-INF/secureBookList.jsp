@@ -42,7 +42,7 @@
                 for (Book book : books) {
             %>
             <tr>
-                <form action="/secure/modify" method="post">
+                <form action="${pageContext.request.contextPath}/secure/modify" method="post">
                     <td><input type="text" class="form-control" name="titre" value="<%= book.getTitre() %>"></td>
                     <td><input type="text" class="form-control" name="auteur" value="<%= book.getAuteur() %>"></td>
                     <td><input type="text" class="form-control" name="editeur" value="<%= book.getEditeur() %>"></td>
@@ -53,7 +53,7 @@
                 </form>
                 </td>
                 <td>
-                    <form action="/secure/delete" method="post">
+                    <form action="${pageContext.request.contextPath}/secure/delete" method="post">
                         <input type="hidden" name="id" value="<%= book.getId() %>">
                         <input type="submit" value="Suppr." class="btn btn-danger">
                     </form>
@@ -62,7 +62,7 @@
             <%}%>
             </tbody>
         </table>
-        <form method="get" action="/secure/new">
+        <form method="get" action="${pageContext.request.contextPath}/secure/new">
             <input class="btn btn-primary" type="submit" value="Nouveau" />
         </form>
     </div>
