@@ -2,23 +2,14 @@
 <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="${pageContext.request.contextPath}/index">App Bibliothèque</a>
     <a class="nav-link active" href="${pageContext.request.contextPath}/bookList">Livres</a>
-    <% if (request.getRemoteUser() == null && !"/WEB-INF/connexion.jsp".equals(request.getServletPath())) { %>
-        <a class="btn btn-primary" href="${pageContext.request.contextPath}/secure/login">Connexion</a>
-    <%} else {%>
+    <% if (request.getRemoteUser() == null) {
+        if (!"/WEB-INF/connexion.jsp".equals(request.getServletPath())) {
+    %>
+    <a class="btn btn-primary" href="${pageContext.request.contextPath}/secure/login">Connexion</a>
+    <%
+        }
+    } else {
+    %>
     <a class="btn btn-primary" href="${pageContext.request.contextPath}/secure/logout">Déconnexion</a>
     <% }%>
 </nav>
-<!--
-<div class="navbar navbar-light bg-light">
-<div class="row container">
-<div class="col text-left">
-<a class="navbar-brand" href="/index">App Bibliothèque</a>
-</div>
-<div class="col text-center">
-<a class="nav-link active" href="/bookList">Livres</a>
-</div>
-<div class="col text-right">
-<a class="btn btn-primary" href="/secure/login">Connexion</a>
-</div>
-</div>
-</div>-->
