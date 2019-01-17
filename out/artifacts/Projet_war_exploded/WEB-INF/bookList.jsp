@@ -4,19 +4,18 @@
 <html>
 <head>
     <title>Liste de Livres</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
 <div class="container">
-    <div class="panel-heading">
-        <%@ include file="navbar.jspf" %>
-    </div>
     <div class="panel-body">
         <% if (request.getAttribute("error") != null) { %>
         <div class="alert alert-danger" role="alert">
             <%=request.getAttribute("error")%>
+        </div>
+        <% } %>
+        <% if (request.getAttribute("added") != null) { %>
+        <div class="alert alert-success" role="alert">
+            <%=request.getAttribute("added")%>
         </div>
         <% } %>
         <table class="table">

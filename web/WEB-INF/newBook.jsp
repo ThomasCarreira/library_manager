@@ -9,22 +9,11 @@
 <html>
 <head>
     <title>Nouveau Livre</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
 <div class="container">
-    <div class="panel-heading">
-        <%@ include file="navbar.jspf" %>
-    </div>
     <div class="panel-body">
         <form action="${pageContext.request.contextPath}/secure/new" method="post">
-            <% if (request.getAttribute("error") != null) { %>
-            <div class="alert alert-danger" role="alert">
-                <%=request.getAttribute("error")%>
-            </div>
-            <% } %>
             <div class="form-group">
                 <label for="titre">Titre</label>
                 <input type="text" class="form-control" name="titre" id="titre">

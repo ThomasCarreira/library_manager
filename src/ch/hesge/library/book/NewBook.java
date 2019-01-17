@@ -13,7 +13,8 @@ public class NewBook extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/newBook.jsp").forward(req,resp);
+        req.getRequestDispatcher("/WEB-INF/navbar.jsp").include(req, resp);
+        req.getRequestDispatcher("/WEB-INF/newBook.jsp").include(req,resp);
     }
 
     @Override
@@ -25,10 +26,11 @@ public class NewBook extends HttpServlet {
         if (titre != "" && auteur != "" && editeur != "" && annee != ""){
             Book book = new Book(titre, auteur, editeur, annee);
             bookService.addBook(book);
-            resp.sendRedirect(req.getContextPath()+"/bookList");
+            resp.sendRedirect(req.getContextPath()+"/bookList?notification=added");
         } else {
-            req.setAttribute("error","Champ vide inacceptable !!!");
-            req.getRequestDispatcher("/WEB-INF/newBook.jsp").forward(req,resp);
+            req.getRequestDispatcher("/WEB-INF/navbar.jsp").include(req, resp);
+            req.getRequestDispatcher("/WEB-INF/notifications/emptyField.jsp").include(req, resp);
+            req.getRequestDispatcher("/WEB-INF/newBook.jsp").include(req,resp);
         }
     }
 }

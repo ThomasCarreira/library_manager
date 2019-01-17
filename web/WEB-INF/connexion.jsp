@@ -9,15 +9,10 @@
 <html>
     <head>
         <title>Connexion</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-              integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     </head>
     <body>
+        <%@ include file="navbar.jsp" %>
         <div class="container">
-            <div class="panel-heading">
-                <%@ include file="navbar.jspf" %>
-            </div>
             <div class="panel-body">
                 <form action="j_security_check" method="POST">
                     <div class="form-group">

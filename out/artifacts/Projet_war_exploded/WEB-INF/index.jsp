@@ -9,15 +9,9 @@
 <html>
     <head>
         <title>Home</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-              integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     </head>
     <body>
         <div class="container">
-            <div class="panel-heading">
-                <%@ include file="navbar.jspf" %>
-            </div>
             <div class="panel-body">
                 <div class="container-fluid" style="width: 60%; height: 70%; float: left;">
                     <h2 class="text-justify">Bienvenue dans votre bibliothèque virtuelle</h2>

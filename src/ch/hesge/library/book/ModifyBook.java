@@ -12,6 +12,13 @@ public class ModifyBook extends HttpServlet {
     private BookService bookService;
 
     @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if (req.getParameter("id") == null){
+            req.getRequestDispatcher("/WEB-INF/errorPages/404.jsp").forward(req, resp);
+        }
+    }
+
+    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int id = Integer.parseInt(req.getParameter("id"));
         String titre = (String) req.getParameter("titre");
@@ -21,10 +28,9 @@ public class ModifyBook extends HttpServlet {
         if (titre != "" && auteur != "" && editeur != "" && annee != ""){
             Book book = new Book(titre, auteur, editeur, annee);
             bookService.modifyBook(id, book);
-            resp.sendRedirect(req.getContextPath()+"/bookList");
+            resp.sendRedirect(req.getContextPath()+"/bookList?notification=modified");
         } else {
-            req.setAttribute("error","Champ vide inacceptable !!!");
-            req.getRequestDispatcher("/WEB-INF/bookList.jsp").forward(req,resp);
+            resp.sendRedirect(req.getContextPath() + "/bookList?notification=empty");
         }
     }
 }
